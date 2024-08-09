@@ -11,7 +11,7 @@ A new Flutter project which fetch User Details from an API.
 
 2. **Navigate to the project directory:**
    ```bash
-   cd your-repo
+   cd Demo-Project
    ```
 
 3. **Install dependencies:**
