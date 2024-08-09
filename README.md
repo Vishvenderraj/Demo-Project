@@ -6,7 +6,7 @@ A new Flutter project which fetch User Details from an API.
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/your-repo.git
+   git clone https://github.com/Vishvenderraj/Demo-Project.git
    ```
 
 2. **Navigate to the project directory:**
