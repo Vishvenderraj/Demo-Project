@@ -36,5 +36,5 @@ A new Flutter project which fetch User Details from an API.
 
 ![UserData List](screenshots/userdata_List.jpg)
 ![UserData Selected](screenshots/userdata_selected.jpg)
-![UserData SelectedDetail](screenshots/userdata_selected_interaction)
+![UserData SelectedDetail](screenshots/userdata_selected_interaction.jpg)
 
