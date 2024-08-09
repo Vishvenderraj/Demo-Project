@@ -18,33 +18,36 @@ class _MyHomePageState extends State<MyHomePage> {
     var screenWidth = MediaQuery.sizeOf(context).width;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("User Fetched Data",),
-        surfaceTintColor: Colors.white,
+        appBar: AppBar(
+          title: const Text(
+            "User Fetched Data",
+          ),
+          surfaceTintColor: Colors.white,
+          backgroundColor: Colors.white,
+        ),
         backgroundColor: Colors.white,
-      ),
-      backgroundColor: Colors.white,
-      body: FutureBuilder<List<UserDetails>>(
-        future: fetchUserData(),
-        builder: (BuildContext context, AsyncSnapshot<List<UserDetails>> snapshot) {
-          if(snapshot.connectionState == ConnectionState.waiting)
-            {
-              return const Center(child: CircularProgressIndicator(
-                color: Colors.red,
-              ),);
-            }
-          else if(snapshot.hasError){
-            return Center(child: Text("Error:${snapshot.error}"),);
-          }
-          else if(!snapshot.hasData)
-            {
-              return const Center(child: Text("No Data found"),);
-            }
-          else
-            {
+        body: FutureBuilder<List<UserDetails>>(
+          future: fetchUserData(),
+          builder: (BuildContext context,
+              AsyncSnapshot<List<UserDetails>> snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(
+                child: CircularProgressIndicator(
+                  color: Colors.red,
+                ),
+              );
+            } else if (snapshot.hasError) {
+              return Center(
+                child: Text("Error:${snapshot.error}"),
+              );
+            } else if (!snapshot.hasData) {
+              return const Center(
+                child: Text("No Data found"),
+              );
+            } else {
               List<UserDetails> userDetails = snapshot.data!;
-              return  RefreshIndicator(
-                onRefresh: () async{
+              return RefreshIndicator(
+                onRefresh: () async {
                   await fetchUserData().then((updatedData) {
                     setState(() {
                       userDetails = updatedData;
@@ -52,16 +55,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   });
                 },
                 child: ChangeNotifierProvider(
-                  create: (BuildContext context) { return SelectedUser(); },
-                  child: UserDataTile(userDetails: userDetails, screenWidth: screenWidth, screenHeight: screenHeight),
+                  create: (BuildContext context) {
+                    return SelectedUser();
+                  },
+                  child: UserDataTile(
+                      userDetails: userDetails,
+                      screenWidth: screenWidth,
+                      screenHeight: screenHeight),
                 ),
               );
             }
-        },
-
-      )
-    );
+          },
+        ));
   }
 }
-
-

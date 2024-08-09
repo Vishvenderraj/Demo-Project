@@ -32,7 +32,7 @@ class UserDataTile extends StatelessWidget {
                         child: ListTile(
                           shape: RoundedRectangleBorder(
                               side: BorderSide(color:
-                              Colors.grey.shade300),
+                              selected?Colors.red.shade200:Colors.grey.shade300),
                               borderRadius: BorderRadius.circular(20)
                           ),
                           title: Padding(
