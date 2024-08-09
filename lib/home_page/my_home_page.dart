@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../fetch_UserDetailsAPI/fetch_userdata_api.dart';
-import '../seleted_tapped_provider/provider_data.dart';
-import 'func/userData_tile.dart';
+import 'package:project/home_page/screens/user_data_tile.dart';
+
+import 'func/fetch_UserDetailsAPI/fetch_userdata_api.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -21,6 +20,9 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: const Text(
             "User Fetched Data",
+            style: TextStyle(
+              letterSpacing: 1,
+            ),
           ),
           surfaceTintColor: Colors.white,
           backgroundColor: Colors.white,
@@ -54,15 +56,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   });
                 },
-                child: ChangeNotifierProvider(
-                  create: (BuildContext context) {
-                    return SelectedUser();
-                  },
-                  child: UserDataTile(
-                      userDetails: userDetails,
-                      screenWidth: screenWidth,
-                      screenHeight: screenHeight),
-                ),
+                child: UserDataTile(
+                    userDetails: userDetails,
+                    screenWidth: screenWidth,
+                    screenHeight: screenHeight),
               );
             }
           },

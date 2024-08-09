@@ -29,9 +29,12 @@ A new Flutter project which fetch User Details from an API.
 -  The app is designed to work on Android
 - Used the `Provider` package for state management for simplicity and scalability.
 - Add a Interactive UI, to clearly portrayed the selected tile
+- Application is Completely responsive
+- Made small interaction to made app look better
 
 ## Screenshots
 
 ![UserData List](screenshots/userdata_List.jpg)
 ![UserData Selected](screenshots/userdata_selected.jpg)
+![UserData SelectedDetail](screenshots/userdata_selected_interaction)
 

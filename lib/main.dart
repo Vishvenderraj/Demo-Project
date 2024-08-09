@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:project/seleted_tapped_provider/provider_data.dart';
-import 'package:provider/provider.dart';
 import 'home_page/my_home_page.dart';
 
 void main() {
@@ -20,10 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: ChangeNotifierProvider(create: (BuildContext context) {
-        return Tapped();
-      },
-      child: const MyHomePage()),
+      home: const MyHomePage(),
     );
   }
 }
